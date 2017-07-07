@@ -1,0 +1,58 @@
+<html>
+
+<head>
+    <title>JS Training</title>
+    <style type="text/css">
+        .heightClass {
+            height: 300px;
+        }
+        
+        div {
+            padding: 10px;
+            margin: 10px;
+        }
+        
+        #row_1 {
+            border: 1px solid red;
+        }
+        
+        #row_2 {
+            border: 1px solid blue
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div id='row_1'>
+            My First Row
+
+        </div>
+        <div id="row_2">
+            My Second Row
+        </div>
+
+        <div>
+            <button id="test_btn">Test Button</button>
+        </div>
+
+    </div>
+    <script>
+        document.getElementById("row_1").onmouseover = function(event) {
+            var srcElement = (typeof event.srcElement != "undefined") ? event.srcElement : event.currentTarget;
+            srcElement.classList.add("heightClass");
+        }
+
+        document.getElementById("row_1").onmouseout = function(event) {
+            var srcElement = (typeof event.srcElement != "undefined") ? event.srcElement : event.currentTarget;
+            srcElement.classList.remove("heightClass");
+        }
+
+        document.getElementById("test_btn").onclick = function() {
+
+        }
+    </script>
+
+</body>
+
+</html>

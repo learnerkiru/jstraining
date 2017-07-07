@@ -1,0 +1,94 @@
+<html>
+
+<head>
+    <style type="text/css">
+        label {
+            display: block;
+            font-weight: bold;
+        }
+        
+        input[type='text'],
+        input[type='password'] {
+            border: 1px solid #CCC;
+            padding: 5px;
+            border-radius: 5px;
+            min-width: 300px;
+        }
+        
+        div {
+            margin: 20px;
+        }
+        
+        button {
+            padding: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="userSignup">
+
+        <form name='userSignupForm' name='userSignupForm'>
+
+            <div>
+                <label>Username</label>
+                <input type="text" name="username" value="" />
+            </div>
+
+            <div>
+                <label>Password</label>
+                <input type="password" name="password" value="" />
+            </div>
+
+            <div>
+                <label>Email</label>
+                <input type="text" name="email" value="" />
+            </div>
+
+            <div>
+                <label>Sex</label>
+                <input type="radio" name="sex" value="male" />Male
+                <input type="radio" name="sex" value="female" />FeMale
+            </div>
+
+            <div>
+                <label>ID Proof</label>
+                <input type="checkbox" name="idproof" value="DL" />DL
+                <input type="checkbox" name="idproof" value="Adhaar" />Adhaar
+                <input type="checkbox" name="idproof" value="pancard" />Pancard
+            </div>
+
+            <div>
+                <button type="button" id="submitBtn">Submit</button>
+            </div>
+
+
+            <div id="container"></div>
+
+            <div>
+                <button type="button" id="loaddataBtn">Load Data</button>
+            </div>
+
+
+
+
+        </form>
+
+    </div>
+    <script type="text/javascript" src="./assets/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="./assets/scripts/namespace.js"></script>
+    <script type="text/javascript" src="./assets/scripts/utility.js"></script>
+    <script type="text/javascript" src="./assets/scripts/userSignup.js"></script>
+
+    <script>
+        window.onload = function() {
+            jsTraining.demo.userSingUp.initialize();
+        }
+    </script>
+
+</body>
+
+
+</html>

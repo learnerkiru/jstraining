@@ -1,0 +1,80 @@
+<html>
+
+<head>
+    <title>JS Training- Arrays</title>
+
+</head>
+
+<body>
+
+    <h1>Javascript Training Arrays</h1>
+
+    <script type="text/javascript">
+        var arr_1 = ['BMW', 'Maruthi'];
+        console.log(arr_1.length);
+        //Adding the Item from Array - At the end of the Array
+        console.log(arr_1.push("Ford"));
+        console.log(arr_1);
+        //removing the Item from Array - At the end of the Array
+        arr_1.pop()
+        console.log(arr_1);
+
+
+        //Add at begining of the Array
+        var arr_2 = ['BMW', 'Maruthi'];
+        arr_2.unshift("Ford");
+        console.log(arr_2);
+
+        //Remove at begining of tye array;
+        arr_2.shift();
+        console.log(arr_2);
+
+        //Splice -  Add
+        var arr_3 = ['Apple', 'Mango', "jackfruit"];
+        arr_3.splice(1, 0, 'lemon', 'lemons');
+        console.log(arr_3);
+        //Splice -  Remove
+        var arr_4 = ['Apple', 'Mango', "lemon", "jackfruit"];
+        arr_4.splice(1, 2);
+        console.log(arr_4);
+
+        //Splice Add and Remove
+        var arr_5 = ['Apple', 'Mango', "jackfruit"];
+        arr_5.splice(1, 1, 'lemon', 'lemons');
+        console.log(arr_5);
+
+        //Slice
+        var arr_6 = ['Apple', 'Mango', 'lemon', 'lemons', "jackfruit"];
+        var slicedArray = arr_6.slice(1, 4);
+        var sliceFullArray = arr_6.slice(1);
+        console.log("Sliced Item: Start");
+        console.log(arr_6);
+        console.log(slicedArray);
+        console.log(sliceFullArray);
+        console.log("Sliced Item: End")
+
+        // Concat
+        var arr_7 = ['Apple', 'Mango'];
+        var arr_8 = ['lemon', "jackfruit"];
+        console.log(arr_7 + "," + arr_8);
+        console.log(arr_7.concat(arr_8));
+
+        //  Sort
+
+        var arr_7 = ['lemon', 'orange', "jackfruit", 'Apple', 'Mango'];
+        console.log(arr_7.sort());
+        console.log(arr_7.reverse());
+
+
+        var arr_9 = [100, 39, 45, 54, 23, 72, 9, 6];
+        //6,9,23,39,45,54,72,100;
+        console.log(arr_9.sort(function(a, b) {
+            return b - a;
+        }));
+
+        var arr_10 = [100, "Hi", "hello", 39, 45, 54, 23, 72, 9, 6];
+        console.log(arr_10.sort());
+    </script>
+</body>
+
+</html>

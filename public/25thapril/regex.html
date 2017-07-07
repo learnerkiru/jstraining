@@ -1,0 +1,30 @@
+<html>
+
+<head>
+    <title>Welcome to JS Training- Regex</title>
+</head>
+
+<body>
+
+
+    <script type="text/javascript">
+        //Match
+        var mainStr = "Lorem Ipsum 1952 is simply dummy text of the printing Ipsum and typesetting industry. Lorem Ipsum has been the industry's standard Ipsum dummy 1970 text ever since the 1500 s, when an unknown printer took a galley of type and scrambled it to make ";
+
+        var pattern = /[0-9]{1,}/g;
+        var op = mainStr.match(pattern);
+        console.log(op);
+
+        //String Search
+        var searchPattern = /ipsum/i;
+        var searchop = mainStr.search(searchPattern);
+        console.log(searchop);
+        //Split text
+        var regexExp = new RegExp("ipsum", "ig");
+        var splitop = mainStr.split(regexExp);
+        var opresult = splitop.length - 1;
+        console.log(opresult);
+    </script>
+</body>
+
+</html>

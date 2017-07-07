@@ -1,0 +1,114 @@
+<html>
+
+<head>
+    <title>JS Training - Strings</title>
+</head>
+
+<body>
+    <div id="demo"></div>
+    <script type="text/javascript">
+        //Simple Text 
+        var strings = "Text";
+        console.log(strings);
+
+        //Text Inside the text
+        var string_in_string = "It's Okay, How are you 'Kiru'? ";
+        console.log(string_in_string);
+
+        //String Length;
+        console.log("String Lenght " + string_in_string.length);
+
+        //Using Backslash to breaks the String -  But this is not Preferred method
+        document.getElementById('demo').innerHTML = "Lorem Ipsum is simply dummy\
+        text of the printing and typesetting industry.Lorem Ipsum has been the industry 's ";
+
+        //String Can be Objects
+        var firstName = "Kiru";
+        var lastName = new String("Kiru");
+        console.log(firstName + " ===> " + lastName);
+        console.log(firstName == lastName);
+        console.log(firstName === lastName);
+
+        console.log("type of firstName ==> " + typeof firstName);
+        console.log("type of lastName ==> " + typeof lastName);
+
+        // IndexOf -  Find String in String First occurances
+        var str = "Please find me Where i'm Please find";
+        var pos = str.indexOf("find");
+        console.log("Index Of" + pos);
+
+        //LastIndexof  - Find String in String last Index Of
+        var laststr = "Please find me Where i'm Please find";
+        var lastPos = laststr.lastIndexOf("finds");
+        console.log("Last Index Of" + lastPos);
+
+        //Search - Search Can do with regex Search also
+        var searchString = "Please find me Where i'm Please find me";
+        var searchPos = "me";
+        console.log("Search Position " + searchString.search(searchPos));
+
+        // Slice - Extract the string and return Extracted String
+        var fruits = "Apple, orange, Manago";
+        var extractedfruit = fruits.slice(0, 5);
+        console.log(fruits);
+        console.log(extractedfruit);
+        var withNegativeIndexes = fruits.slice(-15, -8);
+        console.log("With Negative " + withNegativeIndexes);
+
+        //SubString is Similar to Slice but it wont accept Negative Indexes
+        //Substring 
+        var subFruits = "Apple, orange, Manago";
+        var subExtractedFruit = subFruits.substring(0, 5);
+        console.log(subFruits);
+        console.log(subExtractedFruit);
+
+        //SubStr
+        //@Param: Position and Number of characters need to be extracted.
+        var subStr = "Apple, orange, Manago";
+        var res = subStr.substr(7, 6);
+        console.log("SubStr" + subStr);
+        console.log("SubStr" + res);
+
+        //Replace
+        var replaceStr = "Hi Rajesh, How Are you? Rajesh";
+        var res = replaceStr.replace("Rajesh", "Suresh");
+        console.log("original String " + replaceStr);
+        console.log("Output " + res);
+
+        //Replace with regular Expression
+        var replaceStr = "Hi Rajesh, How Are you? Rajesh";
+        var res = replaceStr.replace(/Rajesh/g, "Suresh");
+        console.log("Regular Original String " + replaceStr);
+        console.log("Regular Output " + res);
+
+        //Replace with regular Expression
+        var replaceStr = "Hi Rajesh, How Are you? 25 Rajesh your age 30";
+        var res = replaceStr.replace(/[0-9]{1,}/g, "Twenty Nine");
+        console.log("Regular Pattern Original String " + replaceStr);
+        console.log("Regular Output " + res);
+
+        //Match 
+        var matchStr = "Hi Hi, How Hi you? Hi";
+        //Converting String into Array
+        var matchedArray = matchStr.match(/hi/ig);
+        console.log("Macthed Array");
+        console.log(matchedArray);
+
+
+        //Find the indices of All occurances
+        var indexedStr = "Hi Kiru, Hi Rajesh, Hi Kumar";
+        var matchedIndexesRegex = /hi/ig;
+        var indexes = [];
+        while ((result = matchedIndexesRegex.exec(indexedStr))) {
+            indexes.push(result.index);
+        }
+        console.log(indexes);
+
+        //Split
+        var splitText = "industry";
+        console.log("Splitting Text");
+        console.log(splitText.split(""));
+    </script>
+</body>
+
+</html>

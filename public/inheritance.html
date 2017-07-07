@@ -1,0 +1,116 @@
+<html>
+
+<head>
+    <title>JS Training - Inheritance</title>
+</head>
+
+<body>
+    <div id="demo"></div>
+
+    <script type="text/javascript">
+        function classA() {
+            this.name = "Kirubakar"
+            this.className = "ClassA";
+
+        }
+
+        function classB() {
+            this.name = "Udayakumar";
+            this.className = "ClassB";
+            classA.call(this);
+        }
+
+        var objectA = new classA();
+        classA.prototype.getName = function() {
+            console.log("Class A getName");
+            console.log("Class Name " + this.className + "==>" + this.name);
+        }
+        objectA.getName();
+
+
+        classB.prototype = Object.create(classA.prototype);
+        classB.prototype.constructor = classB;
+        var objectB = new classB();
+
+        //Overriding ClassA getName
+        classB.prototype.getName = function() {
+            console.log("Calling Class B GetName");
+            classA.prototype.getName.call(this);
+        }
+        objectB.getName();
+
+        //Function Overloading test
+        function overloadingTest(arg1, arg2) {
+            console.log("Calling 2 args")
+        }
+
+        function overloadingTest(arg1, arg2, arg3) {
+            console.log("Calling 3 args")
+        }
+
+        function overloadingTest(arg1) {
+            console.log("Calling 1 args")
+        }
+
+        overloadingTest("Hi", "Hi");
+
+
+
+        //Proto
+
+        function animals() {
+            this.catagory = "Animals";
+            this.getCategory = function() {
+                console.log("Category name" + this.category);
+            }
+        }
+
+        function rabit() {
+            this.category = "Rabit";
+
+        }
+
+        var rabitObj = new rabit();
+
+        rabitObj.__proto__ = new animals();
+        rabitObj.getCategory();
+
+
+        /* Multi Level Inheritance
+        function classOne(firstName, lastName) {
+            this.firstName = firstName;
+            this.lastName = lastName
+            this.getFullName = function() {
+                return "Class One " + this.firstName + " " + this.lastName;
+            }
+
+            this.getFirstName = function() {
+                return "Class One: FirstName " + this.firstName;
+            }
+        }
+
+        function classTwo(firstName, lastName) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.getFullName = function() {
+                return "Class Two " + this.firstName + " " + this.lastName;
+            }
+        }
+
+        function classThree(firstName, lastName) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+        }
+
+        classTwo.prototype = new classOne();
+        classThree.prototype = new classTwo();
+        var classTwoObj = new classTwo('Kirubakar', "Udayakumar");
+        var classThreeObj = new classThree("Rajesh");
+        console.log(classTwoObj.getFullName());
+        console.log(classThreeObj.getFirstName());
+        
+        */
+    </script>
+</body>
+
+</html>

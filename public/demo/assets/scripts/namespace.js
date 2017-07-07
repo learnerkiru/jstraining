@@ -1,0 +1,2 @@
+var jsTraining = {}
+jsTraining.demo = {}

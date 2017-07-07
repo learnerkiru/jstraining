@@ -1,0 +1,94 @@
+<html>
+
+<head>
+    <title>JS Training</title>
+    <script>
+    </script>
+</head>
+
+<body>
+
+    <div>Document Width: <span id="documentWidth"></span></div>
+    <div>Document Height: <span id="documentHeight"></span></div>
+    <hr />
+    <div>Window Width: <span id="windowWidth"></span></div>
+    <div>Window Height: <span id="windowHeight"></span></div>
+    <hr />
+
+    <div>Window outer Width: <span id="windowouterWidth"></span></div>
+    <div>Window outer Height: <span id="windowouterHeight"></span></div>
+    <hr />
+
+    <div>Screen Width: <span id="screenWidth"></span></div>
+    <div>Screen Height: <span id="screenHeight"></span></div>
+    <hr/>
+    <div>Screen Avail Width: <span id="screenavailWidth"></span></div>
+    <div>Screen Avail Height: <span id="screenavailHeight"></span></div>
+    <hr />
+    <div>
+        <div>Location Href : <span id="locationHref"></span></div>
+        <div>Window Hostname : <span id="hostname"></span></div>
+        <div>Window Pathname : <span id="pathname"></span></div>
+        <div>Window Protocol : <span id="protocol"></span></div>
+        <button onclick="loadPage()"> Load the Pwc Spark Page </button>
+    </div>
+
+
+
+
+
+    <script>
+        "use strict";
+        //Height and width of your document in View ports  When document height and Width greater than Window.innerHeight or Window.innerWidth than you will get scrrol bars
+        document.getElementById("documentWidth").innerHTML = document.body.clientWidth;
+        document.getElementById("documentHeight").innerHTML = document.body.clientHeight;
+
+        //It matches your view port, Just Content and No bars
+        document.getElementById("windowWidth").innerHTML = window.innerWidth;
+        document.getElementById("windowHeight").innerHTML = window.innerHeight;
+
+        document.getElementById("windowouterWidth").innerHTML = window.outerWidth;
+        document.getElementById("windowouterHeight").innerHTML = window.outerHeight;
+
+        //It simply matches your resolution(Width * height)
+        document.getElementById("screenWidth").innerHTML = screen.width;
+        document.getElementById("screenHeight").innerHTML = screen.height;
+
+        //Screen.availHeight and Window.outerHeight both are equal
+        //Screen.availHeight tells you height of your window (Exclude your taskbar)
+        document.getElementById("screenavailWidth").innerHTML = screen.availWidth;
+        document.getElementById("screenavailHeight").innerHTML = screen.availHeight;
+
+        //Window Location
+        document.getElementById("locationHref").innerHTML = window.location.href;
+        document.getElementById("hostname").innerHTML = window.location.hostname;
+        document.getElementById("pathname").innerHTML = window.location.pathname;
+        document.getElementById("protocol").innerHTML = window.location.protocol;
+
+        function loadPage() {
+            var url = "https://pwc-spark.com";
+            window.location.assign(url);
+        }
+
+        //Window Alert
+        //alert("test message");
+        //Confirm
+        /*
+        var confirm = confirm("Can you confirm Please?");
+        if (confirm == true) {
+            console.log("User Pressed Yes");
+        } else {
+            console.log("User Pressed No");
+        }
+        */
+
+        //  Prompt message
+        /*
+        var userEnteredData = prompt("Please enter your name");
+        console.log("your name is " + userEnteredData);
+        */
+    </script>
+
+</body>
+
+</html>

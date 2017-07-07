@@ -1,0 +1,45 @@
+<html>
+
+<head>
+    <title>JS Training- Strings</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        var str1 = new String("Hi");
+        var str2 = "Hi";
+
+        //IndexOf
+
+        var indexofString = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been";
+        console.log(indexofString.indexOf("ipsum"));
+        console.log(indexofString.lastIndexOf("Ipsum"));
+        console.log(indexofString[0]);
+
+        //Search
+        var searchString = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been";
+        console.log(searchString.search(/ipsum/ig));
+
+        //Slice
+        var sliceString = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been"
+        var outPutString = sliceString.slice(0, 10)
+        console.log("Slice " + outPutString);
+
+        //Substring
+        var substringText = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been";
+        console.log(substringText.substring(3, 5));
+        console.log(substringText.substring(-10, -1));
+
+        //Substr
+        var substringText = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been";
+        console.log(substringText.substr(3, 5));
+
+        //Split
+
+        var substringText = "Lorem Ipsum is simply Ipsum text of the Ipsum and typesetting industry. Lorem Ipsum has been";
+        console.log(substringText.split("Ipsum"));
+    </script>
+
+</body>
+
+</html>

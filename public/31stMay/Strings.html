@@ -1,0 +1,66 @@
+<html>
+
+<head>
+    <title>JS Training-Strings</title>
+
+</head>
+
+<body>
+
+    <h1>Javascript Training Strings</h1>
+    <script type="text/javascript">
+        var str_1 = "Hi" // best approach
+        var str_2 = new String("Hi");
+        console.log(str_1 == str_2);
+        console.log(str_1 === str_2);
+
+        var str_3 = "Lorem Ipsum is simply dummy  text of the printing and typesetting industry.Lorem Ipsum has been the industry 's"
+        console.log(str_3.length);
+
+        var str_3 = "lorem Ipsum is simply dummy\
+         text of the printing and typesetting industry.Lorem Ipsum has been the industry 's";
+        console.log(str_3[4]);
+
+        //Indexof
+        var str_3 = "lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry 's";
+        console.log(str_3.indexOf("Ipsum"));
+        console.log(str_3.lastIndexOf("Ipsum"));
+
+        var indexedStr = "Hi Kiru, Hi Rajesh, Hi Kumar";
+        var matchedIndexesRegex = /hi/ig;
+        var indexes = [];
+        while ((result = matchedIndexesRegex.exec(indexedStr))) {
+            indexes.push(result.index);
+        }
+        console.log(indexes);
+
+        // Slice
+        var str_3 = "Apple,Mango,Orange";
+        //var slicedString = str_3.slice(0, 5);
+        var slicedString = str_3.slice(-6, -1);
+        console.log(slicedString);
+
+        //Substring
+        var substringoutput = str_3.substring(0, 5);
+        console.log(substringoutput);
+
+        //Substr;
+        var str_4 = "Apple,Mango,Orange";
+        var substrOputput = str_4.substr(0, 2);
+        console.log(substrOputput);
+
+        var searchStr = "Hi Kiru, How Are you?"
+        console.log(searchStr.search(/[0-9]{1,2}/i));
+        console.log(searchStr.match(/[0-9]{1,2}/i));
+        console.log(/[0-9]{1,2}/i.test(searchStr));
+
+        //Replace with regular Expression
+        var replaceStr = "Hi Rajesh, How Are you? 25 Rajesh your age 30";
+        var res = replaceStr.replace(/[0-9]{1,}/g, " ");
+        //var res = replaceStr.replace("Rajesh", "Twenty Nine");
+        console.log("Regular Pattern Original String " + replaceStr);
+        console.log("Regular Output " + res);
+    </script>
+</body>
+
+</html>

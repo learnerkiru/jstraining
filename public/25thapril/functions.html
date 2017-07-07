@@ -1,0 +1,108 @@
+<html>
+
+<head>
+    <title>Welcome to JS Training- functions</title>
+</head>
+
+<body>
+    <h1>Welcome to JS Training</h1>
+
+
+    <script type="text/javascript">
+        //Self invoking Function
+        var userName = null;
+        (function(arg1, arg2) {
+            userName = arg1;
+            console.log(arg1 + " " + arg2);
+        })("Hi", "ram")
+
+        // Calling method in Objects
+
+        var objecmeth = {
+            firstName: "Kiru",
+            lastName: "Uday",
+            getFullName: function() {
+                console.log(this.firstName + " " + this.lastName);
+            }
+        }
+        objecmeth.getFullName();
+
+        // Assging the method to variables
+
+        var func = function() {
+            console.log("Hi Im Here");
+        }
+        func();
+
+        getUserName();
+
+        function getUserName() {
+            var name = "Hi";
+            console.log("Get My name");
+        }
+
+
+        //Class
+        function getUsers(firstName, lastName) {
+            //arguments;
+            var age = "30";
+            this.firstName = firstName;
+            this.lastName = lastName;
+
+            this.getFullName = function() {
+                console.log(this.firstName + " " + this.lastName);
+                console.log("Your age is " + age);
+            }
+        }
+        var obj_1 = new getUsers("Ram", "Kumar");
+        var obj_2 = new getUsers("Rajesh", "Kumar");
+        obj_1.getFullName();
+        obj_2.getFullName();
+        //console.log(obj.age);
+
+
+        getUsers.prototype.getFirstName = function() {
+            console.log(this.firstName);
+        }
+
+        obj_1.getFirstName();
+        obj_2.getFirstName();
+
+        obj_2.getLastname = function() {
+            console.log("Lastname:" + this.lastName);
+        }
+
+        obj_2.getLastname();
+        //obj_1.getLastname();
+
+        //Functions Call By value and Call By reference
+
+        function assignAge(age) {
+            if (age < 30) {
+                age = 45;
+            }
+            var userAge = age;
+            console.log("User Age: " + userAge);
+        }
+        var userAge = 21;
+        assignAge(userAge);
+        console.log("User Age outside: " + userAge);
+
+        var users = {
+            myname: "Kiru",
+            age: 30,
+            lastname: "Uday"
+        }
+
+        function getusersobjRef(arg) {
+            arg.fullname = "Chandru";
+            console.log(users);
+        }
+
+        getusersobjRef(users)
+        console.log(users);
+    </script>
+</body>
+
+
+</html>

@@ -1,0 +1,53 @@
+<html>
+
+<head>
+    <title>Welcome to JS Training- Inheritance</title>
+    <style type="text/css">
+        #wrapper_1 {
+            color: red;
+            background-color: yellow;
+        }
+        
+        .wraperClass {
+            border: 1px solid #000;
+            height: 400px;
+            height: 300px;
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="wrapper_1">
+        Hi
+    </div>
+
+    <div id="wrapper_2">
+        Hi
+    </div>
+
+    <div id="wrapper_3">
+        Hi
+    </div>
+
+    <button id="btn">Button</button>
+
+    <script type="text/javascript">
+        document.getElementById("btn").onclick = function() {
+            alert("Hello")
+        }
+
+        document.getElementById("wrapper_1").onmouseover = function(event) {
+            //debugger;
+            event.currentTarget.classList.add("wraperClass");
+        }
+
+        document.getElementById("wrapper_1").onmouseout = function(event) {
+            event.currentTarget.classList.remove("wraperClass");
+        }
+    </script>
+</body>
+
+
+</html>

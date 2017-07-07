@@ -1,0 +1,3 @@
+jsTraining.batch.utility = {
+
+}

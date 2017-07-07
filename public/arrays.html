@@ -1,0 +1,96 @@
+<html>
+
+<head>
+    <title>JS Training - Arrays</title>
+</head>
+
+<body>
+    <div id="demo"></div>
+
+    <script type="text/javascript">
+        //Array Push
+        var arr_push_1 = ['BMW', 'VOLVO', 'FORD'];
+        arr_push_1.push('Tata')
+        console.log(arr_push_1);
+        //Array Pop
+        var arr_pop_1 = ['BMW', 'VOLVO', 'FORD', 'Bentley'];
+        arr_pop_1.pop();
+        console.log(arr_pop_1);
+
+        //Array Shift -  Rmoving the array from the first Element
+        var arr_shift_1 = ['BMW', 'VOLVO', 'FORD'];
+        arr_shift_1.shift();
+        console.log(arr_shift_1);
+
+        // Array Unshift -  Add the Elements to array at the begining of the array
+        var arr_unshift_1 = ['BMW', 'VOLVO', 'FORD'];
+        arr_unshift_1.unshift("TATA");
+        console.log(arr_unshift_1);
+
+        //Array Concat
+        var arr_1 = ['mango', 'banana', 'orange', 'jackfruit'];
+        var arr_2 = ['apple', 'lemon', 'grapes'];
+        var arr_3 = arr_1 + "," + arr_2;
+        var arr_4 = arr_1.concat(arr_2);
+        console.log(arr_3);
+        console.log(arr_4);
+
+        //Array Splice - Add the Array
+        //Arguments: position of the Element, How many elements should replace, elements
+        var sp_arr_1 = ['mango', 'banana', 'orange', 'jackfruit'];
+        sp_arr_1.splice(1, 0, 'lemon', 'lemons');
+        console.log("Splice Array");
+        console.log(sp_arr_1);
+        console.log("Splice Array End");
+
+        //Array Splice - Remove the array
+        //Arguments: position of the element, How many elements should be Removes
+        var sp_rm_arr_1 = ['mango', 'banana', 'orange', 'jackfruit'];
+        sp_rm_arr_1.splice(0, 1);
+        console.log(sp_rm_arr_1);
+
+        //Array_sort
+        var sort_arr_1 = ['mango', 'banana', 'orange', 'jackfruit'];
+        console.log(sort_arr_1.sort());
+        console.log(sort_arr_1.reverse());
+
+        //Numeric sort
+        var sort_numeric_1 = [25, 100, 302, 101, 504];
+        console.log(sort_numeric_1.sort());
+        console.log(sort_numeric_1.sort(function(a, b) {
+            return a - b;
+        }));
+
+
+        //Sorting Object;
+        var users = [{
+            name: "Rajesh",
+            dob: 1986
+        }, {
+            name: "Suresh",
+            dob: 1990
+        }, {
+            name: "Komesh",
+            dob: 1985
+        }, {
+            name: "Suresh",
+            dob: 1991
+        }]
+
+        users.sort(function(a, b) {
+            return b.dob - a.dob;
+        });
+        console.log(users);
+
+        //Array Slice
+        //Arguments: Start , Upto
+        var arr_slice = ['Mango', 'Apple', 'orange', 'jackfruit'];
+        var slicedArr = arr_slice.slice(1, 3);
+        console.log("Slice Start");
+        console.log(arr_slice);
+        console.log(slicedArr);
+        console.log("Slice End");
+    </script>
+</body>
+
+</html>

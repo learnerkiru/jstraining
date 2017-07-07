@@ -1,0 +1,187 @@
+<html>
+
+<head>
+    <title>JS Training</title>
+    <script>
+    </script>
+</head>
+
+<body>
+    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has
+    survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+    software like Aldus PageMaker including versions of Lorem Ipsum.
+
+    <div id="demo"></div>
+    <div id="">
+        <button onclick="counter()">Call Counter</button>
+        <span id="counterValue"></span>
+    </div>
+
+    <script>
+        "use strict";
+        //Self invoking func
+        // Function Executed automatically followed by ()
+        (function(args_1, args_2) {
+            var newText = args_1 + " " + args_2;
+            console.log("Self invoking functions");
+            console.log("Output =>" + newText);
+
+        })("Hi", "Kiru");
+
+        //Assignging functions to the variables
+        var myFunc = function(x, y) {
+            var z = x + y;
+            console.log("Z value is " + z);
+        }
+        myFunc(5, 10);
+
+        //Function Hoisting
+        //funcHoisting(); This is Expression sho it should be called after Expression
+        var funcHoisting = function() {
+            console.log("Hey  you are calling function Hoisting");
+        }
+        funcHoisting();
+
+        //Functions are Objects
+        function functionArgs(a) {
+            var args = arguments;
+            console.log("Functions Arguments Length " + args.length);
+            console.log("Arguments 1=>" + args[0]);
+            console.log("Arguments 2=>" + args[1]);
+            console.log("Arguments a=>" + a);
+        }
+
+        functionArgs(5, 10);
+
+        //Objects and Array are passed by referece not passed by Value
+        //Objects as Arguments (passed By reference)
+        var myObj = {
+            name: "Kirubakar",
+            age: 29
+        }
+        console.log("Before Changing the Object ");
+        console.log(myObj);
+
+        function objectAsArguments(newObj) {
+            newObj.name = "Ranjeet";
+            newObj.age = 35;
+            console.log("Object Values in inside the function ");
+            console.log(newObj);
+        }
+
+        objectAsArguments(myObj);
+        console.log("After Changing the Object");
+        console.log(myObj);
+
+        //Invoking function as Functions
+        //Inoking the `this` will return Global Object
+        // This should be called at the end of the page  only because Page will be loaded
+        function globalObject() {
+            console.log("Calling Global Object")
+            console.log(this);
+            return this;
+        }
+        globalObject();
+
+
+        //Invoking Function as a Method
+        //getFullname() is the method of nameProp Object, So `this` will point to the nameProp Object only not global Object
+        var nameProp = {
+            firstName: "Kirubakar",
+            lastName: "Udayakumar",
+            getFullName: function() {
+                return this.firstName + " " + this.lastName;
+            }
+        }
+        var fullName = nameProp.getFullName();
+        console.log("Your Full Name is " + fullName);
+
+
+
+        //Ivoking a function with Function Constructor
+        //In Javascript there is no Keyword called `class`
+        var funncionConstructor = function(firstName, lastName) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.getFullName = function() {
+                return this.firstName + "  " + this.lastName
+            }
+        }
+
+        var functionConObj = new funncionConstructor("Kirubakar", "Udayakumar");
+        console.log(functionConObj.getFullName());
+
+
+        //Call And Apply Method
+        var callFuntion = function(firstName, lastName) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.getFullName = function() {
+                this.fullName = this.firstName + " " + this.lastName;
+                console.log("Call Method Your Full Name => " + this.fullName);
+            }
+        }
+
+        var myCallFunctionObj = new callFuntion();
+        var myCallFunctionObj2 = new callFuntion();
+        callFuntion.call(myCallFunctionObj, "Kirubakar", "Udayakumar");
+        callFuntion.call(myCallFunctionObj2, "Ranjeet", "Kumar");
+        myCallFunctionObj.getFullName();
+        myCallFunctionObj2.getFullName();
+
+        // Closures Function
+        // What Clousure does is, it make the global variables as the local Variable with in
+        // the function variable will be global
+        var count = (function() {
+            var counterVar = 0;
+            return function() {
+                return ++counterVar;
+            }
+        })();
+        //console.log("Counter Value in Outside of the function" + counterVar);
+
+        function counter() {
+            document.getElementById("counterValue").innerHTML = count();
+        }
+
+        //Prototype
+        function parentClass(firstName, lastName) {
+            this.className = "Parent Class";
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.getClass = function() {
+                return this.className;
+            }
+        }
+        parentClass.sex = "Male"; // This will not work in object level
+        parentClass.prototype.getFullname = function() {
+            return this.firstName + " " + this.lastName;
+        }
+
+        var parentObject = new parentClass("Kirubakar", "Uday");
+        var parentObject2 = new parentClass("sandy", "Raj");
+
+        console.log(parentObject.getFullname());
+        console.log(parentObject2.getFullname())
+
+        parentObject2.getFirstName = function() {
+            return this.firstName;
+        }
+
+        console.log("Parent Object 2 First Name:" + parentObject2.getFirstName());
+        //console.log("Parent Object  First Name:" + parentObject.getFirstName());
+        // This will give error, Because sex property added to the class  but not using prototype.
+        // You can work access only via parentClass.sex
+        console.log("Parent Object 2 Class Sex " + parentObject2.sex);
+        console.log("Parent Class Sex " + parentClass.sex);
+
+        function childClass() {
+            this.className = "Child Class";
+        }
+
+        childClass.prototype.constructor = new parentClass();
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,89 @@
+<html>
+
+<head>
+    <title>JS Training- Functions</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        fun1();
+
+        function fun1() {
+            var name = "Kiru";
+            console.log(name);
+        }
+
+        //selfinvoking funtion
+        (function(arg1, arg2) {
+            console.log(arg1);
+        })(10, 5)
+
+        //Assigning function
+        var fun = function() {
+            console.log("Assigning Function");
+        }
+        fun();
+
+        //Arguments
+        function getName(arg1, arg3, ) {
+            console.log("Get Name");
+        }
+        getName("Kir", "Ram");
+
+        var nameObj = {
+            name: "Kiran",
+            getName: function() {
+                return this.name;
+            }
+        }
+
+
+        var homePage = {
+            loggedIn: null,
+            getLoggedIn: function() {
+                //Ajax Call
+            }
+        }
+
+        console.log("Object getName " + nameObj.getName());
+
+        //Passing reference Parameteres
+        var obj = {
+            name: "Kiru",
+            lastName: "Uday"
+        }
+
+
+        function getFullName(objval) {
+            console.log(objval);
+            objval.name = "Chandru";
+            objval.lastName = "kumar";
+        }
+
+        getFullName(obj);
+        console.log(obj);
+
+
+        //Class
+        function classA(arg1, arg2) {
+            var name = "Kiu";
+            this.newArgs = arguments[0];
+
+            this.newArgs2 = (arguments[1] != undefined) ? arguments[1] : "";
+
+            this.getClassname = function() {
+                console.log("Class Name " + this.className);
+            }
+
+            this.className = "Class A"
+        }
+
+        var classObj = new classA("1", "2");
+        classObj.getClassname();
+
+
+        //Funtion Oveloading
+    </script>
+</body>
+
+</html>

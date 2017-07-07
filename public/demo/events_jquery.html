@@ -1,0 +1,77 @@
+<html>
+
+<head>
+    <title>JS Training</title>
+    <style type="text/css">
+        .heightClass {
+            height: 300px;
+        }
+        
+        div {
+            padding: 10px;
+            margin: 10px;
+        }
+        
+        #row_1 {
+            border: 1px solid red;
+        }
+        
+        #row_2 {
+            border: 1px solid blue
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div id='row_1'>
+            My First Row
+
+        </div>
+        <div id="row_2">
+            My Second Row
+        </div>
+
+        <div>
+            <button id="test_btn">Test Button</button>
+        </div>
+
+
+        <div id="container"></div>
+
+        <div id="rmov">Please remove the Content</div>
+        <button id="cnt">Add Content</button>
+    </div>
+
+    <script type="text/javascript" src="./assets/lib/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(document).on("click", "#test_btn", function(event) {});
+
+            $(document).on("mouseover", "#row_1", function(event) {
+                var srcElement = (typeof event.srcElement != "undefined") ? event.srcElement : event.currentTarget;
+                $(srcElement).addClass("heightClass");
+                $(srcElement).removeClass("heightClass");
+            })
+
+
+            $(document).on("click", "#cnt", function() {
+                var newElem = "<div>New Content</div>"
+
+                $("#rmov").remove();
+
+                $('#container').append(newElem);
+                $('#container').attr("Newdata", "1");
+
+                $('#container').css({
+                    "background-color": "red",
+                    color: "#FFF"
+                })
+            })
+
+        })
+    </script>
+
+</body>
+
+</html>

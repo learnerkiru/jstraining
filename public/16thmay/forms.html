@@ -1,0 +1,62 @@
+<html>
+
+<head>
+    <title>JS Training- Forms</title>
+    <style type="text/css">
+        #userSignup div {
+            margin: 10px 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <form name="userSignup" id="userSignup">
+
+            <div>
+                <label>FirstName</label>
+                <input type="text" name="username" id="username" value="" />
+            </div>
+            <div>
+                <label>Lastname</label>
+                <input type="text" name="lastname" id="lastname" value="" />
+            </div>
+            <div>
+                <label>Proof</label>
+                <input type="checkbox" name="proof" id="proof_dl" value="DL" />DL
+                <input type="checkbox" name="proof" id="proof_voter" value="voter Card" />Voter Card
+                <input type="checkbox" name="proof" id="proof_passport" value="passport" />Passport
+            </div>
+
+            <div>
+                <label>Sex</label>
+                <input type="radio" name="sex" id="sex_male" value="male" />Male
+                <input type="radio" name="sex" id="sex_female" value="female" /> FeMale
+            </div>
+            <div>
+
+                <button name="submit" type="button" id="submit">Submit</button>
+            </div>
+
+        </form>
+
+
+
+    </div>
+
+
+
+    <script type="text/javascript" src="demo/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="demo/scripts/namespace.js"></script>
+    <script type="text/javascript" src="demo/scripts/utilities.js"></script>
+    <script type="text/javascript" src="demo/scripts/scripts.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            jsTraining.batch.usersignup.initialize();
+        })
+    </script>
+</body>
+
+</html>

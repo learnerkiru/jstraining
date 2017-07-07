@@ -1,0 +1,33 @@
+<html>
+
+<head>
+    <title>JS Training - Regular Expression</title>
+</head>
+
+<body>
+    <div id="demo"></div>
+    <script type="text/javascript" src="public/assets/lib/jquery.min.js"></script>
+    <script type="text/javascript">
+        var useIntput = "Lorem Ipsum is simply 1986 dummy text of the printing and 1978 typesetting industry. Lorem Ipsum has been the industry's "
+        var pattern = /[0-9]{1,}/g;
+        var output = useIntput.match(pattern)
+        console.log(output);
+
+        //Test
+        var str = "This is the best";
+        var strPatern = /this/ig
+        console.log("Is Matching: " + strPatern.test(str));
+
+        //Search 
+        var searchStr = "Visit google test google";
+        var patt = /Google/i;
+        var res = searchStr.search(patt);
+        console.log("Search Matching " + res);
+
+        //Split
+        var str = "A man is as good as his word";
+        var nooccur = str.split(new RegExp("a", "gi")).length;
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,9 @@
+{
+    "success": true,
+    "data": {
+        "msg": "User Added Successfully",
+        "userdata": {
+            "name": "Kir"
+        }
+    }
+}

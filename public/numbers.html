@@ -1,0 +1,70 @@
+<html>
+
+<head>
+    <title>JS Training - Strings</title>
+</head>
+
+<body>
+    <div id="demo"></div>
+    <script type="text/javascript">
+        //Number as Objects 
+        var numObj = new Number(500);
+        var numbervalue = 500;
+        if (numObj == numbervalue) {
+            console.log("Both are Same");
+        } else {
+            console.log("Both are not Same");
+        }
+        if (numObj === numbervalue) {
+            console.log("Both are Same type");
+        } else {
+            console.log("Both are not Same  not same type");
+            console.log("typeof numObj: " + typeof numObj);
+            console.log("typeof numbervalue: " + typeof numbervalue);
+        }
+
+        //Infinity
+        var x = 2 / 0;
+        console.log(x);
+        if (x != Infinity) {
+            //
+        } else {
+            console.log("Hi number is Infinity");
+        }
+
+        //NAN -  Not a Number 
+        var nanObj = 2 / "Apple";
+        console.log(nanObj);
+        if (isNaN(nanObj)) {
+            console.log("Hi its a NaN");
+        } else {
+
+        }
+
+        // ToString
+        var number = 19;
+        console.log(number.toString());
+        console.log(number.toString(16));
+        console.log(number.toString(8));
+        console.log(number.toString(2));
+
+
+        //To Fixed
+        var fixedNum = "123.65742";
+        console.log("Fixed Num: " + Number(fixedNum).toFixed());
+        console.log("Fixed Num 2: " + Number(fixedNum).toFixed(2));
+        console.log("Fixed Num 2: " + Number(fixedNum).toFixed(4));
+
+        //ParseInt
+        var intNum = "10.30";
+        console.log("ParseInt: " + parseInt(intNum));
+        var intNumText = "10 Years ago and 15 days ago";
+        console.log("ParseInt with text:" + parseInt(intNumText));
+
+        //ParseFloat
+        var floatNum = "10.30";
+        console.log("ParseFLoat: " + parseFloat(floatNum));
+    </script>
+</body>
+
+</html>

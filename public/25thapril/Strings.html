@@ -1,0 +1,43 @@
+<html>
+
+<head>
+    <title>Welcome to JS Training - Strings</title>
+</head>
+
+<body>
+    <h1>Welcome to JS Training</h1>
+    <script type="text/javascript">
+        var stringObj = new String("Kiru");
+        var stringVal = "Kiru";
+
+        console.log(stringObj == stringVal);
+        console.log(stringObj === stringVal);
+
+
+        var stringCont = "Kirubakar";
+        console.log(stringCont[0]);
+        console.log(stringCont.length);
+        var op = stringCont.split("k");
+        console.log(op);
+
+        //Index of
+        var userName = "Kirubakar";
+        console.log(userName.indexOf("K"));
+        console.log(userName.lastIndexOf("k"));
+
+        var searchString = "Please find me Where i'm Please find";
+        var searchPos = "me";
+        var op = searchString.search(searchPos);
+        console.log(op);
+
+
+        //replace
+        var replaceString = "Please find me Where i'm Please find me";
+        var result = replaceString.replace("me", "Im");
+        console.log(result);
+
+        //
+    </script>
+</body>
+
+</html>

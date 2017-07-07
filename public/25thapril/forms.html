@@ -1,0 +1,80 @@
+<html>
+
+<head>
+    <title>Welcome to JS Training- Inheritance</title>
+    <style type="text/css">
+        label {
+            display: block;
+        }
+        
+        input[type="text"],
+        input[type="password"] {
+            border: 1px solid #CCC;
+            padding: 5px;
+        }
+        
+        #usersignup {
+            margin: 0 30%;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <h2>User Signup</h2>
+        <form name="usersignup" id="usersignup">
+            <div>
+                <label>Username</label>
+                <input type="text" name="username" value="" />
+            </div>
+            <div>
+                <label>Password</label>
+                <input type="password" name="password" value="" />
+            </div>
+            <div>
+                <label>Email</label>
+                <input type="text" name="email" value="" />
+            </div>
+            <div>
+                <label>Proof</label>
+                <input type="checkbox" name="proof" value="DL">DL
+                <input type="checkbox" name="proof" value="Adhaar">Adhaar
+                <input type="checkbox" name="proof" value="Voter">Voter
+            </div>
+            <div>
+                <label>Sex</label>
+                <input type="radio" name="sex" value="Male">Male
+                <input type="radio" name="sex" value="Female">Female
+            </div>
+
+            <div>
+                <button type="button" name="submit" id="submit">Submit</button>
+            </div>
+
+        </form>
+
+        <button type="button" id="loadData">Load Data</button>
+        <div id="container" style="height: 300px; width: 300px; border:1px solid #CCC">
+
+        </div>
+
+
+    </div>
+
+    <script type="text/javascript" src="./assets/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="./assets/scripts/namespace.js"></script>
+    <script type="text/javascript" src="./assets/scripts/utility.js"></script>
+    <script type="text/javascript" src="./assets/scripts/userSignup.js"></script>
+
+    <script>
+        window.onload = function() {
+            jsTraining.userSignup.initialize();
+        }
+    </script>
+
+</body>
+
+
+</html>

@@ -1,0 +1,45 @@
+<html>
+
+<head>
+    <title>JS Training - Inheritance</title>
+</head>
+
+<body>
+    <div id="demo"></div>
+    <script type="text/javascript">
+        function ClassA() {
+            //arguments;
+            this.className = "Class A";
+            //this.userName = ""
+            this.getClassName = function() {
+                return this.className;
+            }
+        }
+
+        var classAObj = new ClassA();
+
+
+        ClassA.prototype.userName = "Kiru";
+        ClassA.prototype.setClassName = function(className) {
+            console.log("New Class Name " + className);
+            this.className = className;
+        }
+
+
+        classAObj.userName = "Kirubakar Udayakumar";
+        classAObj.setClassName("New A")
+            //debugger;
+
+        function ClassB() {
+            this.className = "Class B";
+        }
+
+        ClassB.prototype = new ClassA();
+        //ClassB.prototype.constructor = ClassB;
+
+        var classBObj = new ClassB();
+        console.log("Calling from Class B " + classBObj.getClassName());
+    </script>
+</body>
+
+</html>

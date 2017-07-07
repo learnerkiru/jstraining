@@ -1,0 +1,65 @@
+<html>
+
+<head>
+    <title>Welcome to JS Training- Inheritance</title>
+</head>
+
+<body>
+    <h1>Welcome to JS Training</h1>
+
+
+    <script type="text/javascript">
+        function parentClass() {
+            this.className = "Parent Class";
+            this.getClassName = function() {
+                console.log(this.className);
+            }
+            this.confirmClass = function() {
+                console.log("Im here at Parent");
+            }
+        }
+
+        function childClass() {
+            this.className = "Child Class";
+            this.confirmClass = function() {
+                console.log("Im here at Child");
+            }
+
+            this.getClassName = function() {
+                console.log("Im Here at " + this.className);
+            }
+        }
+
+        childClass.prototype = new parentClass();
+        childClass.prototype.constructor = childClass;
+
+        var parentObj = new parentClass();
+        var childObj = new childClass();
+
+
+        //console.log(childObj);
+        childObj.getClassName();
+
+        // Function Overloading - Not Possible
+        function getValues(arg1) {
+            console.log("Im " + arg1)
+        }
+
+        function getValues(arg1, arg2) {
+            console.log("Im " + arg1 + "Im " + arg2)
+        }
+
+        function getValues(arg1, arg2, arg3) {
+            console.log("Im In three")
+        }
+
+        function getValues(arg1) {
+            console.log("Im in One")
+        }
+
+        getValues();
+    </script>
+</body>
+
+
+</html>

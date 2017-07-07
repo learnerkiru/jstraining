@@ -1,0 +1,61 @@
+<html>
+
+<head>
+    <title>JS Training - Forms</title>
+    <link rel="stylesheet" type="text/css" href="public/assets/styles/styles.css" />
+
+</head>
+
+<body>
+    <form name="signup" id="signup" method="post">
+        <div>
+            <label>Username</label>
+            <input type="text" name='userName' />
+        </div>
+        <div>
+            <label>Password</label>
+            <input type="password" name='password' />
+        </div>
+        <div>
+            <label>Email</label>
+            <input type="text" name='email' />
+        </div>
+        <div>
+            <label>Company</label>
+            <input type="text" name='company' />
+        </div>
+        <div>
+            <label>Sex</label>
+            <input type="radio" name='sex' value="Male" />Male
+            <input type="radio" name='sex' value="Female" />Female
+        </div>
+        <div>
+            <label>ID Proof</label>
+            <input type="checkbox" name='proof' value="DL" />DL
+            <input type="checkbox" name='proof' value="Pancard" />Pan Card
+            <input type="checkbox" name='proof' value="Aadhaar" />Aadhaar Card
+
+        </div>
+        <div><button type="button" id="submit">Submit</button>
+        </div>
+    </form>
+
+
+    <div>
+        <button id="get_data">Get Data</button>
+
+    </div>
+
+    <script type="text/javascript" src="public/assets/lib/jquery.min.js"></script>
+    <script type=" text/javascript" src="public/assets/scripts/namespace.js"></script>
+    <script type=" text/javascript" src="public/assets/scripts/utilities.js"></script>
+    <script type=" text/javascript" src="public/assets/scripts/scripts.js"></script>
+    <script type="text/javascript">
+        window.onload = function() {
+            JSTraining.demo.userSignUpForm.initialize();
+        }
+    </script>
+
+</body>
+
+</html>

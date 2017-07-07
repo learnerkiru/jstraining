@@ -1,0 +1,86 @@
+<html>
+
+<head>
+    <title>JS Training- Funtions</title>
+
+</head>
+
+<body>
+
+    <h1>Javascript Training Funtions</h1>
+    <script type="text/javascript">
+        //Self Invokign fucntions
+        (function(jq) {
+
+            ///Calling the funtion in Object
+            var LoginPage = {
+                userName: "",
+                password: "",
+
+                verifyLogin: function() {
+
+                },
+                loginSuccess: function() {
+
+                }
+
+            }
+
+
+
+            LoginPage.loginSuccess();
+
+        })("JQuery");
+        //Function Declaration
+        function getUsername() {
+            console.log("Hi");
+
+        }
+
+        //FunctionStatement
+        var getname = function() {
+            console.log("Hi Its getname");
+        }
+        getname();
+        var LoginPage = {
+            userName: "",
+            password: "",
+
+            verifyLogin: function() {
+
+            },
+            loginSuccess: function() {
+
+            }
+
+        }
+        LoginPage.loginSuccess();
+
+
+
+        //Class 
+
+        function Login() {
+            var fullname;
+
+            this.userName = arguments[0];
+            this.password = arguments[1];
+            this.verifyLogin = function() {
+                console.log("Its verify login method Name");
+            }
+            this.getUserName = function() {
+                debugger;
+                this.verifyLogin();
+                return this.userName;
+            }
+        }
+
+        var loginObj = new Login("Kiru", "Password");
+        var loginObj_2 = new Login("Rajesh", "Password");
+        console.log(loginObj.userName)
+        console.log("get userName: " + loginObj_2.getUserName());
+        //Login();
+    </script>
+</body>
+
+</html>

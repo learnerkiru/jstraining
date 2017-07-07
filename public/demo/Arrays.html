@@ -1,0 +1,90 @@
+<html>
+
+<head>
+    <title>JS Training - Object</title>
+</head>
+
+<body>
+    <h1>Welcome to the Demo</h1>
+    <div id="demo"></div>
+    <script type="text/javascript">
+        var firstArr = [];
+        console.log(typeof firstArr);
+
+        //Push
+        firstArr.push("Kiru");
+        firstArr.push("Chandru");
+        firstArr.push("Ram");
+        console.log(firstArr);
+
+        //Pop
+        firstArr.pop();
+        console.log(firstArr);
+
+        //Unshift
+        firstArr.unshift("Rakesh");
+        console.log(firstArr);
+
+        //Shift
+        firstArr.shift();
+        console.log(firstArr);
+
+        //Splice
+        firstArr.splice(1, 0, 'Ram', 'Kumar');
+        console.log(firstArr);
+
+        firstArr.splice(2, 0, "Sujit");
+        console.log(firstArr);
+
+        firstArr.splice(2, 2, "Rakesh");
+        console.log(firstArr);
+
+
+        //Sort
+        var sort_var = ['mango', 'jack', 'Apple', 'Grapes'];
+        console.log(sort_var.sort());
+        console.log(sort_var.reverse());
+
+        //Sort Number: Asc
+        var sortNum = [15, 9, 8, 25, 101];
+        console.log(sortNum.sort()); //8 9 15,25,101;
+        console.log(sortNum.sort(function(a, b) {
+            return a - b;
+        }));
+
+        //Sort Number: desc
+        var sortDescNum = [15, 9, 8, 25, 101];
+        console.log(sortDescNum.sort()); //8 9 15,25,101;
+        console.log(sortDescNum.sort(function(a, b) {
+            return b - a;
+        }));
+
+        //Sorting Object
+        var sortObject = [{
+            name: 'Suresh',
+            age: 29
+        }, {
+            name: 'Rames',
+            age: 31
+        }, {
+            name: 'Rajesh',
+            age: 19
+        }, {
+            name: 'Komesh',
+            age: 21
+        }];
+
+        //console.log(sortObject);
+
+        console.log(sortObject.sort(function(a, b) {
+            return a.age - b.age;
+        }));
+
+        //Array Slice
+        var arr_slice = ['mango', 'grape', 'apple', 'lemon', 'jackfruit'];
+        var sliced_array = arr_slice.slice(1, 3)
+        console.log(sliced_array);
+    </script>
+</body>
+
+</html>

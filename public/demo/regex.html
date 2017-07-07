@@ -1,0 +1,27 @@
+<html>
+
+<head>
+    <title>JS Training - regex</title>
+    <script>
+    </script>
+</head>
+
+<body>
+
+
+    <script type="text/javascript">
+        //Match
+        var str = "Lorem Ipsum 1670 is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
+        var pattern = /[0-9]{1,}/gi
+        var output = str.match(pattern);
+        console.log(output);
+
+        //Test
+        var strTest = "Lorem That Ipsum 1670 is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
+        var testPattern = /that/i;
+        var testOuput = testPattern.test(strTest);
+        console.log(testOuput);
+    </script>
+</body>
+
+</html>

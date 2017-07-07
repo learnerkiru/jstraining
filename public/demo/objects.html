@@ -1,0 +1,43 @@
+<html>
+
+<head>
+    <title>JS Training - Object</title>
+</head>
+
+<body>
+    <h1>Welcome to the Demo</h1>
+    <div id="demo"></div>
+    <script type="text/javascript">
+        var userApplication = {};
+        userApplication.firstName = "Kiru";
+        userApplication.lastName = "uday";
+        userApplication.getFullName = function() {
+            return this.firstName + this.lastName;
+        }
+
+        console.log(userApplication.getFullName());
+
+
+        var secondObject = new Object();
+        secondObject.firstName = "Rajesh";
+
+
+        var thirdApplication = {
+            firstName: "Babu",
+            lastName: "Sah",
+            getFullName: function() {
+                return this.firstName + " " + this.lastName;
+            }
+        }
+
+        thirdApplication.getFirstName = function() {
+            return this.firstName;
+        }
+        console.log(thirdApplication['firstName']); //
+        console.log(thirdApplication.firstName);
+        thirdApplication['firstName' + 'lastName'] = "Final output";
+        console.log(thirdApplication);
+    </script>
+</body>
+
+</html>

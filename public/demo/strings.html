@@ -1,0 +1,74 @@
+<html>
+
+<head>
+    <title>JS Training - Strings</title>
+</head>
+
+<body>
+    <h1>Welcome to the Demo</h1>
+    <div id="demo"></div>
+    <script type="text/javascript">
+        //String 
+        var strTest = "Test String";
+        var objStr = new String("Test String");
+        console.log(strTest == objStr);
+        console.log(strTest === objStr);
+
+        console.log(" strTest ==> " + typeof strTest);
+        console.log("objStr ==> " + typeof objStr);
+
+        //Concat
+        var str_1 = "First String";
+        var str_2 = "Second String";
+        console.log(str_1 + str_2);
+
+        var strNum_1 = "5";
+        var strNum_2 = "5";
+        console.log(strNum_1 + strNum_2);
+        console.log(parseInt(strNum_1) + parseInt(strNum_1));
+
+
+        var strNum_3 = 5;
+        var strNum_4 = "5";
+        console.log(strNum_3 + strNum_4);
+
+        var stringValue = "Lorem Ipsum is simply dummy text of \
+        the printing and typesetting industry.Lorem Ipsum has been the industry 's standard dummy text ever since the 1500s, when ";
+
+        var html = "<div>Test\
+        <span>Hai</span>\
+        </div>";
+
+        //Finding String -  IndexOf
+        var mainStrings = "Lorem Ipsum is simply dummy text of is test is ";
+        var findString = "is";
+        console.log("Indexof: " + mainStrings.indexOf(findString));
+        console.log("Indexof: " + mainStrings.lastIndexOf(findString));
+
+        // String Slice
+        var slice_content = "Lorem Ipsum is simply dummy text of is test is ";
+        var slicedContent = slice_content.slice(6, slice_content.length);
+        console.log(slicedContent);
+
+        //Substring same as slice
+        //SubStr
+
+        var substrContent = "Lorem Ipsum is simply dummy text of is test is ";
+        var subCnt = substrContent.substr(0, 10)
+        console.log(subCnt);
+
+        //replace
+        var mainContent = "Lorem Ipsum is simply dummy text of is test is simply";
+        var replacesCont = mainContent.replace("simply", "Complicated");
+        var replacesContGlobal = mainContent.replace(/simply/g, "Complicated");
+        console.log(replacesCont);
+        console.log(replacesContGlobal);
+
+
+        var mainStr = "Hai";
+        console.log(mainStr[0]);
+        console.log(mainStr.split(""));
+    </script>
+</body>
+
+</html>

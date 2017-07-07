@@ -1,0 +1,125 @@
+<html>
+
+<head>
+    <title>JS Training - Function</title>
+</head>
+
+<body>
+    <div id="demo"></div>
+    <script type="text/javascript">
+        //Self invokig function
+        (function(firstName, lastName) {
+            console.log(firstName + " " + lastName);
+        })("Kir", "Uda")
+
+        //Assinging Function to variables
+        var func = function() {
+            console.log("Calling Function to variables");
+        }
+        func();
+
+        // Function Hoisting
+        testFun();
+
+        function testFun() {
+            console.log("test Fun");
+        }
+
+        //Call the method in Obj
+
+        var userLogin = {
+            firstName: "",
+            lastName: "",
+            getFullName: function() {
+                return this.firstName + " " + this.lastName;
+            },
+            getFirstName: function() {
+                return this.firstName;
+            }
+        }
+        userLogin.firstName = "Rajesh";
+        userLogin.lastName = "Kumr";
+        console.log(userLogin.getFullName());
+
+        //function
+        function creatingFn() {
+            var firstName = "Kirubakar";
+            console.log("Function " + firstName);
+
+        }
+        creatingFn();
+
+        //Class
+        function creatingClass() {
+            var firstName = "Kiru";
+            console.log(firstName);
+        }
+        var fnObj = new creatingClass();
+
+        // Class with Objec
+        function creatingClassThis(firstName, lastName) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+
+            this.getFullName = function() {
+                return this.firstName + " " + this.lastName;
+            }
+        }
+        var fnObj_1 = new creatingClassThis("Rajesh", "Kumar");
+        var fnObj_2 = new creatingClassThis("Ganesh", "Raj");
+
+        console.log("Object 1: " + fnObj_1.getFullName());
+        console.log("Object 2: " + fnObj_2.getFullName());
+
+        // Prototype
+        function creatingClassPrototype(firstName, lastName) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+        }
+        creatingClassPrototype.prototype.age = 30;
+        creatingClassPrototype.prototype.getFullName = function() {
+            return this.firstName + " " + this.lastName;
+        }
+
+        var obj1 = new creatingClassPrototype("Kir", "Kumar");
+        var obj2 = new creatingClassPrototype("ram", "bala");
+        console.log(obj1.getFullName());
+        console.log("Objec 2: " + obj2.getFullName());
+        console.log(obj1.age);
+        obj2.getFirstName = function() {
+            return this.firstName;
+        }
+
+        console.log(obj2.getFirstName());
+        //console.log(obj1.getFirstName());
+
+
+        //Inheritance
+
+        function classA() { // base Class
+            this.className = "ClassA";
+            this.getClassName = function() {
+                console.log("Calling Class A");
+                return this.className;
+            }
+        }
+
+        function classB() { // Child Class
+            this.className = "Class B";
+
+            this.getClassName = function() {
+                console.log("Calling Class B");
+                return this.className;
+            }
+
+        }
+
+        //classB.prototype = Object.create(classA);
+        classB.prototype = new classA();
+
+        var objClassB = new classB()
+        console.log(objClassB.getClassName());
+    </script>
+</body>
+
+</html>

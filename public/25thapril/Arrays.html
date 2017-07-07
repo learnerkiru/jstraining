@@ -1,0 +1,99 @@
+<html>
+
+<head>
+    <title>Welcome to JS Training - Arrays</title>
+</head>
+
+<body>
+    <h1>Welcome to JS Training</h1>
+    <script type="text/javascript">
+        var array_one = [];
+
+        //Array Push
+        array_one.push("Apple");
+        array_one.push("Orange");
+        array_one.push("Grapes");
+        console.log(array_one);
+
+        //Array pop
+        array_one.pop();
+        console.log(array_one);
+
+        //Unshift
+        array_one.unshift("jack fruit");
+        console.log(array_one);
+        //shift 
+        array_one.shift();
+        array_one.shift();
+        console.log(array_one);
+
+        //Splice - Add The Data
+        var arrSplice = ['Tata', 'Maruthi', 'BMW'];
+        console.log(arrSplice);
+        arrSplice.splice(1, 0, 'Benz', 'Ford');
+        console.log(arrSplice);
+
+        //Splice - Remove the Data
+        var arrSpliceRm = ['Tata', 'Maruthi', 'BMW'];
+        console.log(arrSpliceRm);
+        arrSpliceRm.splice(1, 2, 'Ford', "benz", "Honda")
+        console.log(arrSpliceRm);
+
+
+        //Array Concat
+        var array_one = ['Tata', 'Maruthi', 'BMW'];
+        var array_two = ['Ford', 'Honda'];
+        var result = [];
+        //result = array_one + array_two
+        result = array_one.concat(array_two);
+        console.log(result);
+
+        //Slice
+        var array_slice = ['Tata', 'Maruthi', 'BMW', 'Ford', 'Honda'];
+        var slice_result = array_slice.slice(1, 3);
+        console.log(slice_result);
+
+        //Array Sort
+        var array_sort = ['Tata', 'Maruthi', 'BMW', 'Ford', 'Honda'];
+        array_sort.sort();
+        console.log(array_sort);
+
+        var array_rsort = ['Tata', 'Maruthi', 'BMW', 'Ford', 'Honda'];
+        array_rsort.reverse();
+        console.log(array_rsort);
+
+        //Sort for Num
+        //1, 3, 10, 34, 89, 100
+        //1,10,100,3,34,89
+        var array_num_sort = [10, 1, 89, 100, 3, 34];
+        //array_num_sort.sort();
+        array_num_sort.sort(function(a, b) {
+            return a - b;
+        })
+        console.log(array_num_sort);
+        array_num_sort.sort(function(a, b) {
+            return b - a;
+        })
+        console.log(array_num_sort);
+
+        var arr_sort_obj = [{
+            name: "kiru",
+            age: 21
+        }, {
+            name: "Uday",
+            age: 55
+        }, {
+            name: "Rajesh",
+            age: 10
+        }, {
+            name: "Kumar",
+            age: 32
+        }];
+        arr_sort_obj.sort(function(a, b) {
+            return a.age - b.age;
+        });
+        console.log(arr_sort_obj);
+    </script>
+</body>
+
+</html>

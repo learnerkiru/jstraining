@@ -1,0 +1,106 @@
+<html>
+
+<head>
+    <title>JS Training - Forms</title>
+    <style type="text/css">
+        p,
+        div {
+            border: 1px solid red;
+            padding: 5px;
+            margin: 10px;
+        }
+        
+        .selectionElement {
+            background: red;
+            color: blue;
+        }
+        
+        .heightClass {
+            height: 200px;
+        }
+        
+        #wrapper_one,
+        #wrapper_two,
+        #wrapper_three {
+            padding: 10px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <p id="p_one"> Hai Kiru</p>
+    <p id="p_two"> How Are you?</p>
+    <button id="addeventbtn">Add Event</button>
+    <button id="removeEvent">Remove Event</button>
+    <div id="cont">Nodemailer is a module for Node.js applications to allow easy as cake email sending. The project got started back in 2010 when there was no sane option to send email messages, today it is the solution most Node.js users turn to by default.</div>
+
+
+    <div id="wrapper_one">
+        <div id="wrapper_two">
+            <div id="wrapper_three">
+                Hi
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        var p_one = document.getElementById("p_one");
+        var addEventObj = document.getElementById("addeventbtn");
+        var addEventBtnFunc = function() {
+            console.log("Addvent is Calling");
+        }
+        p_one.addEventListener("click", function() {
+            console.log("Calling Add event Listenter1");
+        })
+
+        p_one.addEventListener("click", function() {
+            console.log("Calling Add event Listenter2");
+        })
+        document.getElementById("p_one").onclick = function() {
+            console.log("Calling Click 1");
+        }
+
+        addEventObj.addEventListener("click", addEventBtnFunc);
+
+        document.getElementById("removeEvent").addEventListener("click", function() {
+            console.log("At removing the Events");
+            addEventObj.removeEventListener("click", addEventBtnFunc);
+        })
+
+        document.getElementById("wrapper_one").addEventListener("click", function(e) {
+            console.log("Calling Wrapper One" + event.eventPhase)
+        })
+
+        document.getElementById("wrapper_two").addEventListener("click", function(e) {
+            debugger;
+            console.log("Calling Wrapper Two" + event.eventPhase)
+        })
+
+        document.getElementById("wrapper_three").addEventListener("click", function(e) {
+            e.stopPropagation();
+            console.log("Calling Wrapper three" + event.eventPhase)
+        })
+
+
+        /*
+                document.getElementById("p_one").onclick = function() {
+                        console.log("Calling Click 2");
+                    }
+                    
+                    document.getElementById("p_one").onmouseover = function(event) {
+                        event.srcElement.classList.add("selectionElement");
+                        event.srcElement.classList.add("heightClass");
+                    }
+                    document.getElementById("p_one").onmouseout = function() {
+                        event.srcElement.classList.remove("selectionElement");
+                        event.srcElement.classList.remove("heightClass");
+                    }
+                    */
+    </script>
+</body>
+
+</html>

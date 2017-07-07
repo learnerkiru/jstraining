@@ -1,0 +1,90 @@
+<html>
+
+<head>
+    <title>JS Training- Arrays</title>
+</head>
+
+<body>
+
+
+    <script type="text/javascript">
+        //Array Push
+
+        var array_push = ["BMW", "Maruthi", ];
+        array_push.push("Ford");
+        console.log(array_push);
+
+        //Array Pop
+        array_push.pop();
+        console.log(array_push);
+
+        //Unshift;
+        array_push.unshift("Ford");
+        console.log(array_push);
+
+        //shift
+        array_push.shift();
+        console.log(array_push);
+
+        // Splice
+        var arr_splice = ["banana", "jackfruit", "Apple", "Mango"];
+        arr_splice.splice(2, 0, "lemon")
+        console.log(arr_splice);
+
+        var arr_splice_2 = ["banana", "jackfruit", "Apple", "Mango"];
+        arr_splice_2.splice(1, 1, "lemon")
+        console.log(arr_splice_2);
+
+        //Slice
+        var slice_arr = ["banana", "jackfruit", "Apple", "Mango"];
+        var newslicedArr = slice_arr.slice(0, 3);
+        console.log(newslicedArr);
+
+
+        //Sort
+        var sort_text = ["banana", "jackfruit", "apple", "mango"];
+        console.log(sort_text.sort());
+        console.log(sort_text.reverse());
+
+        var sort_num = [3, 34, 100, 55, 11, 25, 31];
+        console.log(sort_num.sort()); //3, 11, 25, 31, 34,55, 100
+
+        console.log(sort_num.sort(function(a, b) {
+            return a - b;
+        }));
+
+        var sort_obj = [{
+                name: "Kiru",
+                age: 30
+            }, {
+                name: "rajesh",
+                age: 31
+            },
+
+            {
+                name: "Kumar",
+                age: 25
+            }
+        ]
+
+        console.log(sort_obj.sort(function(a, b) {
+            return a.age - b.age;
+        }));
+
+
+        //Array Concat
+        var concat_array_1 = ["Kiru", "Kumar", "Ram"];
+        var concat_array_2 = ["Bala", "Ravi", "chandru"];
+
+        //console.log(concat_array_1.concat(concat_array_2));
+        console.log(concat_array_1 + "," + concat_array_2);
+
+
+
+
+
+        //Sort
+    </script>
+</body>
+
+</html>

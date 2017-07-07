@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+
+<head></head>
+
+<body>
+    <div>
+        <a href="javascript:;" name="anchor1">Anchor 1</a>
+        <a href="javascript:;" name="anchor2">Anchor 2</a>
+        <a href="javascript:;" name="anchor3">Anchor 3</a>
+    </div>
+    <div>
+        <span>Total Anchors Length: </span> <span id="anchorLength"></span>
+    </div>
+    <div id="anchor-innercontent"></div>
+
+    <div>
+        <img src="" id="googleImg" class="" />
+    </div>
+
+    <div data-username="Kiru" id="attrUsername">Hello Its username data Attributes</div>
+    <div data-lastname="Kiru" id="attrlastname">Hello Its lastname data Attributes</div>
+
+    <script type="text/javascript">
+        document.getElementById("anchorLength").innerHTML = document.anchors.length;
+        document.getElementById("anchor-innercontent").innerHTML = document.anchors["anchor1"].innerHTML;
+
+        //Attributes
+        document.getElementById("googleImg").src = "./assets/images/google.png";
+        console.log("Username before Changes: " + document.getElementById("attrUsername").dataset.username);
+        document.getElementById("attrUsername").dataset.username = "Kirubakar";
+        console.log("Username After Changes: " + document.getElementById("attrUsername").dataset.username);
+
+        //Get the Element By data Attributes
+    </script>
+</body>
+
+</html>

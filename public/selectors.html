@@ -1,0 +1,55 @@
+<html>
+
+<head>
+    <title>JS Training - Selectors</title>
+    <style type="text/css">
+
+    </style>
+</head>
+
+<body>
+
+    <div id="sel_0_0">
+        Selectors 0 0
+    </div>
+    <div id="sel_0_1">
+        Selectors 0 1
+    </div>
+
+    <div id="sel_1_0">
+        Selectors 1 0
+    </div>
+
+    <div id="sel_1_1">
+        Selectors 1 1
+    </div>
+
+    <div id="sel_2_0">
+        Selectors 2 0
+    </div>
+
+
+    <script>
+        var elem = [];
+
+
+        [].forEach.call(document.querySelectorAll("div"), function(ele) {
+            elem.push(ele);
+        })
+
+
+
+        var finalizedArray = elem.filter(function(ele) {
+            if (ele.id.match(/^sel_[0-9]{1}_0/)) {
+                ele.style.color = "red";
+                return ele;
+            }
+
+            //console.log(ele.id);
+        })
+
+        console.log(finalizedArray);
+    </script>
+</body>
+
+</html>

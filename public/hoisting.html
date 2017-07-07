@@ -1,0 +1,56 @@
+<html>
+
+<head>
+    <title>JS Training - Hoisting</title>
+
+</head>
+
+<body>
+    <div id="demo"></div>
+
+    <script type="text/javascript">
+        "use strict";
+        var firstName = "kirubakar";
+        var lastName;
+        //This will cause the error in Strict Mode wont allow the keywords as variables
+        //arguments = "test123";
+        console.log("Get My name " + firstName);
+        //console.log("args" + arguments);
+
+        // testingGlobalObject();  
+
+        var testingGlobalObject = function() {
+            console.log("testing Global Object");
+        }
+
+        function myFunction() {
+            return this;
+        }
+        document.getElementById("demo").innerHTML = myFunction();
+        console.log("My last Name =>" + lastName);
+        lastName = "Udayakumar";
+        console.log("After Assignment My LastName =>" + lastName);
+
+
+        var a = 1;
+
+        function b() {
+            a = 10;
+            return;
+
+            function a() {}
+        }
+        b();
+        //alert(a);
+
+        var testmsg = "Hi testmsg";
+        console.log("Hoisting" + testmsg);
+
+
+        console.log("Hoisting test: " + hoistingVar);
+        var hoistingVar;
+        hoistingVar = "Hositing Value";
+    </script>
+</body>
+
+</html>

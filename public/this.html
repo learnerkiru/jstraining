@@ -1,0 +1,100 @@
+<html>
+
+<head>
+    <title>JS Training - This</title>
+
+</head>
+
+<body>
+    <div id="demo"></div>
+    <button type="button" name="checkthis" id="checkthis">Check This</button>
+    <script type="text/javascript">
+        "use strict";
+
+        function fun() {
+            return this;
+        }
+
+        function test() {
+            console.log(fun.call(this));
+            console.log(fun.call({
+                name: "Kiru"
+            }));
+            console.log(fun() === undefined);
+            console.log(fun.call(2) === 2);
+            console.log(fun.apply(3) === 3);
+            console.log(fun.apply(3) === 3);
+        }
+        test();
+
+        //Caller
+        function caller(a, b) {
+            //console.log(arguments);
+        }
+        caller(1, 2);
+
+
+        function Person() {
+            this.name = "Kiru";
+            var that = this;
+            this.setName = function() {
+                setTimeout(function() {
+                    console.log(this);
+                    console.log(that);
+                    console.log("Your Name is " + this.name);
+                }.bind(this), 5000)
+            }
+        }
+
+        var personObj = new Person();
+        personObj.setName();
+
+
+        // With Arrow function
+        var f = () => {
+            console.log("Inside in arrow fun ")
+            console.log(this);
+        }
+        f();
+        //This Without arrow function
+        var f2 = function() {
+            console.log("Inside in function statement ")
+            console.log(this);
+        }
+        f2();
+
+        function f3() {
+            console.log("Inside in function declaration ");
+            console.log(this);
+        }
+        f3();
+
+
+        // This in Object
+        var thisObj = {
+            name: "Kirubakar",
+            getName: function() {
+                console.log("Your Name is " + this.name);
+            },
+            init: function() {
+                document.getElementById("checkthis").addEventListener("click", function(event) {
+                    console.log(this);
+                    this.checkthisFun();
+                }.bind(this));
+            },
+            checkthisFun: function() {
+                console.log("Hi Im un Check this Fun");
+            }
+        }
+        thisObj.getName();
+        thisObj.init();
+        //Extracting from the object, and call the function
+        //this.name wont Work here Will throw the error - So I command getNameFun()
+        var getNameFun = thisObj.getName;
+        //getNameFun();
+        var getNameFun2 = thisObj.getName.bind(thisObj);
+        getNameFun2();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<html>
+
+<head>
+    <title>Welcome to JS Training- Inheritance</title>
+    <style type="text/css">
+        span {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Welcome to JS Training- Window</h1>
+
+
+    <div>
+        <span id="windowOuterHeight"></span>
+        <span id="windowOuterwidth"></span>
+
+    </div>
+    <hr />
+    <div>
+        <span id="windowInnerHeight"></span>
+        <span id="windowInnerwidth"></span>
+    </div>
+    <hr />
+    <div>
+        <span id="documentheight"></span>
+        <span id="documentwidth"></span>
+    </div>
+    <hr />
+
+    <div>
+
+    </div>
+
+
+    <script type="text/javascript">
+        document.getElementById("windowOuterHeight").innerHTML = window.outerHeight;
+        document.getElementById("windowOuterwidth").innerHTML = window.outerWidth;
+
+        document.getElementById("windowInnerHeight").innerHTML = window.innerHeight;
+        document.getElementById("windowInnerwidth").innerHTML = window.innerWidth;
+
+        document.getElementById("documentheight").innerHTML = document.body.clientHeight;
+        document.getElementById("documentwidth").innerHTML = document.body.clientWidth;
+
+
+        //Window.location
+        window.location.url
+        window.location.href
+        window.location.assign(URL)
+    </script>
+</body>
+
+
+</html>
