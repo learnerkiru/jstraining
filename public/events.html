@@ -57,12 +57,14 @@
             console.log("Calling Add event Listenter1");
         })
 
-        p_one.addEventListener("click", function() {
-            console.log("Calling Add event Listenter2");
-        })
         document.getElementById("p_one").onclick = function() {
             console.log("Calling Click 1");
         }
+
+        p_one.addEventListener("click", function() {
+            console.log("Calling Add event Listenter2");
+        })
+
 
         addEventObj.addEventListener("click", addEventBtnFunc);
 

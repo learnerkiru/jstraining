@@ -5,13 +5,17 @@
 </head>
 
 <body>
-    <div id="demo"></div>
+    <div id="demo">
+        <h1>Arrays</h1>
+
+    </div>
 
     <script type="text/javascript">
         //Array Push
         var arr_push_1 = ['BMW', 'VOLVO', 'FORD'];
         arr_push_1.push('Tata')
         console.log(arr_push_1);
+
         //Array Pop
         var arr_pop_1 = ['BMW', 'VOLVO', 'FORD', 'Bentley'];
         arr_pop_1.pop();
@@ -30,6 +34,7 @@
         //Array Concat
         var arr_1 = ['mango', 'banana', 'orange', 'jackfruit'];
         var arr_2 = ['apple', 'lemon', 'grapes'];
+        var arr_num = 2;
         var arr_3 = arr_1 + "," + arr_2;
         var arr_4 = arr_1.concat(arr_2);
         console.log(arr_3);
@@ -46,7 +51,7 @@
         //Array Splice - Remove the array
         //Arguments: position of the element, How many elements should be Removes
         var sp_rm_arr_1 = ['mango', 'banana', 'orange', 'jackfruit'];
-        sp_rm_arr_1.splice(0, 1);
+        sp_rm_arr_1.splice(0, 1, 'lemon');
         console.log(sp_rm_arr_1);
 
         //Array_sort

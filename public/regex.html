@@ -6,7 +6,7 @@
 
 <body>
     <div id="demo"></div>
-    <script type="text/javascript" src="public/assets/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="./assets/lib/jquery.min.js"></script>
     <script type="text/javascript">
         var useIntput = "Lorem Ipsum is simply 1986 dummy text of the printing and 1978 typesetting industry. Lorem Ipsum has been the industry's "
         var pattern = /[0-9]{1,}/g;
@@ -26,7 +26,8 @@
 
         //Split
         var str = "A man is as good as his word";
-        var nooccur = str.split(new RegExp("a", "gi")).length;
+        var nooccur = str.split(new RegExp("a", "gi"));
+        console.log(nooccur);
     </script>
 </body>
 

@@ -50,6 +50,7 @@
         // Slice - Extract the string and return Extracted String
         var fruits = "Apple, orange, Manago";
         var extractedfruit = fruits.slice(0, 5);
+        console.log('Fruits');
         console.log(fruits);
         console.log(extractedfruit);
         var withNegativeIndexes = fruits.slice(-15, -8);
@@ -66,8 +67,8 @@
         //@Param: Position and Number of characters need to be extracted.
         var subStr = "Apple, orange, Manago";
         var res = subStr.substr(7, 6);
-        console.log("SubStr" + subStr);
-        console.log("SubStr" + res);
+        console.log("SubStr " + subStr);
+        console.log("SubStr " + res);
 
         //Replace
         var replaceStr = "Hi Rajesh, How Are you? Rajesh";
@@ -77,13 +78,13 @@
 
         //Replace with regular Expression
         var replaceStr = "Hi Rajesh, How Are you? Rajesh";
-        var res = replaceStr.replace(/Rajesh/g, "Suresh");
+        var res = replaceStr.replace(/Rajesh/ig, "Suresh");
         console.log("Regular Original String " + replaceStr);
         console.log("Regular Output " + res);
 
         //Replace with regular Expression
         var replaceStr = "Hi Rajesh, How Are you? 25 Rajesh your age 30";
-        var res = replaceStr.replace(/[0-9]{1,}/g, "Twenty Nine");
+        var res = replaceStr.replace(/[0-9]{1,}/g, "'Twenty Nine'");
         console.log("Regular Pattern Original String " + replaceStr);
         console.log("Regular Output " + res);
 
@@ -96,12 +97,14 @@
 
 
         //Find the indices of All occurances
-        var indexedStr = "Hi Kiru, Hi Rajesh, Hi Kumar";
+        var indexedStr = "Hi Kiru, hi Rajesh, Hi Kumar";
         var matchedIndexesRegex = /hi/ig;
         var indexes = [];
         while ((result = matchedIndexesRegex.exec(indexedStr))) {
+            console.log(`Result Index ${result}`);
             indexes.push(result.index);
         }
+        console.log("Matched Indexes");
         console.log(indexes);
 
         //Split

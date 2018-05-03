@@ -17,6 +17,7 @@
         function classB() {
             this.name = "Udayakumar";
             this.className = "ClassB";
+            console.log(`Before Call A : ${this.name} ${this.className}`)
             classA.call(this);
         }
 
